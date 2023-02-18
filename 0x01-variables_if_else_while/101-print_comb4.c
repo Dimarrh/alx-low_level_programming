@@ -16,7 +16,7 @@ int main(void)
 		int i = tens;
 		int j = unit;
 
-		while (tens <=8 && i <= 8)
+		while (tens <= 8 && i <= 8)
 		{
 			int k = j;
 
