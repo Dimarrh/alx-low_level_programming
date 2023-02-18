@@ -1,27 +1,36 @@
 #include <stdio.h>
 /**
- * main - Prints combinationof numbers
- *
+ * main - function
  * Return: result
-*/
+ */
 int main(void)
 {
-	int i, l;
-	for (i = '0'; i <= '9'; i++)
-	{
-	for (l = '0'; l <= '9'; l++)
-	{
-	if (i < l)
-	{
-	putchar(i);
-	putchar(l);
-	if (i != '8' || l <='8')
-	{
-	putchar(',');
-	putchar('');
-	}
-	}
-	}
-	}
-}
+	int i = 0;
+	int j;
+	int num = 0;
 
+	if (num <= 9)
+	{
+		while (i < 9)
+		{
+			j = num;
+
+			while (j < 9)
+			{
+				j++;
+				putchar(i + '0');
+				putchar(j + '0');
+
+				if (i != 8)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
+			i++;
+			num++;
+		}
+	}
+	putchar('\n');
+	return (0);
+}
