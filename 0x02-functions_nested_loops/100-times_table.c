@@ -1,13 +1,14 @@
 #include"main.h"
 /**
- * print_times_table - prints all possible combinations of two two-digit numbers
+ * print_times_table - prints time table
  * @n: condition number
  * Return: 0 (Success)
  */
 void print_times_table(int n)
 {
-	int digit, mult,result;
-	if (n <= 15 && n >= 0)
+int digit, mult, result;
+
+if (n <= 15 && n >= 0)
 {
 for (digit = 0; digit <= n; digit++)
 {
