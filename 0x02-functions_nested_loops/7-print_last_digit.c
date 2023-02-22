@@ -2,7 +2,7 @@
 #include "main.h"
 /**
  * print_last_digit - prints all possible combinations of two two-digit numbers
- * @j: absolutr val
+ * @k: absolutr val
  * Return: 0 (Success)
  */
 int print_last_digit(int k)
