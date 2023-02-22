@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 /**
  * main - Program that prints out putchar on the screen
  * Return: result
