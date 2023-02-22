@@ -1,6 +1,6 @@
 /**
- * _abs - program that prints 
- * @j: absolutr val
+ * _abs - program that prints
+ * @k: absolutr val
  * Return: 0 (Success)
  */
 int _abs(int k)
