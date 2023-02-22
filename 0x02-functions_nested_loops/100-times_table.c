@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include"main.h"
 /**
  * print_times_table - prints all possible combinations of two two-digit numbers
  * @n: condition number
