@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * print_alpahbet_x10 - prints
+ * print_alphabet_x10 - print
  * Return: 0 (Success)
  */
 void print_alphabet_x10(void)
 {
 	int i;
 	char c;
+
 	int numOfIterations = 10;
 	for (i = 0; i < numOfIterations; i++)
 	{
@@ -15,5 +16,4 @@ void print_alphabet_x10(void)
 	_putchar(c);
 	_putchar('\n');
 	}
-	return;
 }
