@@ -1,29 +1,39 @@
-#include <stdio.h>
+#include"main.h"
 /**
- * print_times_table - prints all possible combinations of two two-digit numbers
+ * print_times_table - prints time table
  * @n: condition number
  * Return: 0 (Success)
  */
 void print_times_table(int n)
 {
-if ((n > 0 && n < 16) || n == 0)
+int digit, mult, result;
+
+if (n <= 15 && n >= 0)
 {
-int i, j, k;
-for (i = 0; i < n + 1; i++)
+for (digit = 0; digit <= n; digit++)
 {
-for (j = 0; j < n + 1; j++)
+_putchar('0');
+for (mult = 1; mult <= n; mult++)
 {
-k = i * j;
-if (j < n)
+_putchar(',');
+_putchar(' ');
+result = digit * mult;
+if (result <= 99)
+_putchar(' ');
+if (result <= 9)
+_putchar(' ');
+if (result >= 100)
 {
-printf("%-3d,   ", k);
+_putchar((result / 100) + '0');
+_putchar((result / 10) % 10 + '0');
 }
-else
+else if (result <= 99 && result >= 10)
 {
-printf("%-d", k);
+_putchar((result / 10) + '0');
 }
+_putchar((result % 10) + '0');
 }
-printf("\n");
+_putchar('\n');
 }
 }
 }

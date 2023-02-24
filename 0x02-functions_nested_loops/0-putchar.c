@@ -1,10 +1,10 @@
-#include <stdio.h>
+#include "main.h"
 /**
  * main - Program that prints out putchar on the screen
  * Return: result
  */
 
-int main()
+int main(void)
 {
 	_putchar('_');
 	_putchar('p');
@@ -14,5 +14,6 @@ int main()
 	_putchar('h');
 	_putchar('a');
 	_putchar('r');
-	return 0;
+	_putchar('\n');
+	return (0);
 }
