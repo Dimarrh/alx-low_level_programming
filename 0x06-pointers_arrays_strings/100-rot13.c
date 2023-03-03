@@ -1,39 +1,30 @@
+#include "main.h"
 #include <stdio.h>
+
 /**
- *rot13 - updates the value of the variable
- * the pointer points to 98
- * @text: pointer to the variable to update
+ * rot13 - encoder rot13
+ * @s: pointer to string params
  *
- * Return: pointer to the updated variable
+ * Return: *s
  */
 
-char *rot13(char *text)
+char *rot13(char *s)
 {
-char ALPHABETS[27] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-'i', 'j', 'k', 'l', 'm', 'A', 'B', 'C', 'D', 'E', 'F', 'G',
-'H', 'I', 'J', 'K', 'L', 'M' };
-char alphabets[27] = { 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
-'v', 'w', 'x', 'y', 'z', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
-'U', 'V', 'W', 'X', 'Y', 'Z' };
+	int i;
+	int j;
+	char data1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-int i, j, k;
-
-for (i = 0; text[i] != '\0'; i++)
-{
-for (j = 0; j < 27; j++)
-{
-if (text[i] == ALPHABETS[j])
-{
-k = alphabets[j];
-text[i] = k;
-}
-else
-{
-k = ALPHABETS[j];
-text[i] = k;
-}
-}
-}
-
-return (text);
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		for (j = 0; j < 52; j++)
+		{
+			if (s[i] == data1[j])
+			{
+				s[i] = datarot[j];
+				break;
+			}
+		}
+	}
+	return (s);
 }

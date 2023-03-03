@@ -1,25 +1,27 @@
+#include "main.h"
 /**
- *_strncpy - updates the value of the variable
- * the pointer points to 98
- * @dest: pointer to the variable to update
- * @src: pointer to the variable
- * @n: bytes to copy
- * Return: pointer to the updated variable
+ * _strncpy - copy a string
+ * @dest: input value
+ * @src: input value
+ * @n: input value
+ *
+ * Return: dest
  */
-
 char *_strncpy(char *dest, char *src, int n)
 {
-int lengthOfDest = 0;
+	int j;
 
-while (lengthOfDest < n)
-{
-dest[lengthOfDest] = src[lengthOfDest];
-if (src[lengthOfDest] == '\0')
-{
-break;
-}
-lengthOfDest++;
-}
+	j = 0;
+	while (j < n && src[j] != '\0')
+	{
+		dest[j] = src[j];
+		j++;
+	}
+	while (j < n)
+	{
+		dest[j] = '\0';
+		j++;
+	}
 
-return (dest);
+	return (dest);
 }
