@@ -1,20 +1,19 @@
+#include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
-*** string_nconcat - concatenates two strings **
-*** @s1: string to be concatenated into ********
-*** @s2: string to concatenate into ************
-*** @n: number of bytes to concatenate *********
-*** Description: the function concatenames n ***
-*** bytes of s2 into s1 ************************
-*** Return: pointer to concatenated string *****
-**/
-
+ * string_nconcat - concatenates two strings.
+ * @s1: first string.
+ * @s2: second string.
+ * @n: amount of bytes.
+ *
+ * Return: pointer to the allocated memory.
+ * if malloc fails, status value is equal to 98.
+ */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *new_strn;
-	unsigned int count_s1, count_s2, i, j;
+	char *sout;
+	unsigned int ls1, ls2, lsout, i;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -22,37 +21,29 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 		s2 = "";
 
-	for (count_s1 = 0; s1[count_s1] != '\0';)
-		count_s1++;
+	for (ls1 = 0; s1[ls1] != '\0'; ls1++)
+		;
 
-	for (count_s2 = 0; s2[count_s2] != '\0';)
-		count_s2++;
+	for (ls2 = 0; s2[ls2] != '\0'; ls2++)
+		;
 
-	if (n >= count_s2)
-	{
-		new_strn = malloc(sizeof(char) * (count_s1 + count_s2 + 1));
-		n = count_s2;
-	}
-	else
-		new_strn = malloc(sizeof(char) * (count_s1 + n + 1));
+	if (n > ls2)
+		n = ls2;
 
-	printf("n: %d\n", n);
-	printf("c1: %d\n", count_s1);
-	printf("c2: %d\n", count_s2);
-	if (!new_strn)
+	lsout = ls1 + n;
+
+	sout = malloc(lsout + 1);
+
+	if (sout == NULL)
 		return (NULL);
 
-	for (i = 0; i < count_s1; i++)
-		new_strn[i] = s1[i];
+	for (i = 0; i < lsout; i++)
+		if (i < ls1)
+		sout[i] = s1[i];
+		else
+		sout[i] = s2[i - ls1];
 
-	for (; i == count_s1; i++)
-		if (s1[i] == '\0')
-			for (j = 0; s2[j] != '\0' && j < n; j++)
-			{
-				new_strn[i] = s2[j];
-				i++;
-			}
-	new_strn[i] = '\0';
+	sout[i] = '\0';
 
-	return (new_strn);
+	return (sout);
 }
